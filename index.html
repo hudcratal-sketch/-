@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 📚 AI와 인문학 📚 </title>
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-gradient: radial-gradient(circle at top, #1f2937 0, #020617 45%, #020617 100%);
+      --card-bg: #0b1120;
+      --card-border: rgba(148, 163, 184, 0.4);
+      --accent: #38bdf8;
+      --accent-soft: rgba(56,189,248,0.1);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --badge-understand: #4ade80;
+      --badge-use: #f97316;
+      --radius: 14px;
+      --shadow-soft: 0 18px 45px rgba(15,23,42,0.6);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      /* 전체적으로 가독성 좋은 '개구' 폰트 적용 */
+      font-family: 'Gaegu', cursive, -apple-system, sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      line-height: 1.6;
+      font-size: 18px; /* 손글씨류는 조금 크게 보는게 좋습니다 */
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 40px auto 56px;
+      padding: 0 20px;
+    }
+
+    header.site {
+      text-align: left;
+      margin-bottom: 32px;
+    }
+
+    header.site h1 {
+      /* 메인 타이틀은 더 손글씨 느낌이 강한 '나눔펜스크립트' */
+      font-family: 'Nanum Pen Script', cursive;
+      font-size: 48px;
+      margin: 0 0 10px;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+    }
+
+    header.site p.lead {
+      margin: 0 0 6px;
+      color: var(--text-main);
+      font-size: 20px;
+    }
+
+    header.site .tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-top: 10px;
+      background: rgba(15,23,42,0.6);
+    }
+
+    header.site .tag-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-soft);
+    }
+
+    .section-block {
+      margin-top: 36px;
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 24px;
+      gap: 8px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-pill {
+      font-size: 14px;
+      text-transform
