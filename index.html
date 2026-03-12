@@ -6,7 +6,7 @@
   <title> 📚 AI와 인문학 📚 </title>
   <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
   
-  <style> 
+  <style>
     :root {
       --bg-gradient: radial-gradient(circle at top, #1f2937 0, #020617 45%, #020617 100%);
       --card-bg: #0b1120;
@@ -101,4 +101,206 @@
 
     .section-pill {
       font-size: 14px;
-      text-transform
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 2px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      color: var(--accent);
+    }
+
+    .section-desc {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 600px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, rgba(15,23,42,0.95), rgba(15,23,42,0.9));
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--card-border);
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 26px 60px rgba(15,23,42,0.9);
+      border-color: var(--accent);
+    }
+
+    .cover-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .cover {
+      transform: scale(1.05);
+    }
+
+    .body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #0b1120;
+      padding: 2px 10px;
+      border-radius: 999px;
+      width: fit-content;
+    }
+
+    .badge-understand { background-color: var(--badge-understand); }
+
+    .title {
+      font-weight: 700;
+      font-size: 20px;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .desc {
+      font-size: 16px;
+      color: #e5e7eb;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      header.site h1 { font-size: 36px; }
+      .section-title { font-size: 24px; }
+    }
+  </style>
+
+  <script>
+    function goLibrary(title) {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(title.trim());
+        }
+      } catch (e) {}
+      const query = encodeURIComponent(title.trim());
+      const url = `https://umyeon.seocholib.or.kr/TotalSearch?keyword=${query}`;
+      window.open(url, '_blank', 'noopener');
+    }
+  </script>
+</head>
+<body>
+  <main class="wrap">
+    <header class="site">
+      <h1>📚 AI와 인문학 📚</h1>
+      <p class="lead">나의 마음을 울리는 문장, AI가 찾아주는 비슷한 그림책을 만나보세요!</p>
+      <div class="tagline">
+        <div class="tag-dot"></div>
+        <span>표지를 클릭하면 제목 복사 후 도서관 검색으로 연결됩니다.</span>
+      </div>
+    </header>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div class="section-title">
+          마음을 읽는 AI 추천 도서
+          <span class="section-pill">이해와 공감</span>
+        </div>
+        <p class="section-desc">
+          복잡한 기술 설명 대신, 따뜻한 그림과 인문학적 통찰로 AI 시대를 준비합니다.
+        </p>
+      </div>
+
+      <section class="grid">
+        <article class="card" onclick="goLibrary('AI 시대, 변화 속 인간의 미래')">
+          <div class="cover-wrap">
+            <img class="cover" src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791195964741.jpg" alt="표지" />
+          </div>
+          <div class="body">
+            <span class="badge badge-understand">AI 이해하기</span>
+            <h2 class="title">AI 시대, 변화 속 인간의 미래</h2>
+            <p class="subtitle">김송희 외 지음</p>
+            <p class="desc">AI가 가져올 변화 속에서 '나'라는 존재의 가치를 다시 생각하게 합니다.</p>
+          </div>
+        </article>
+
+        <article class="card" onclick="goLibrary('AI는 세상을 어떻게 바꾸는가')">
+          <div class="cover-wrap">
+            <img class="cover" src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9788934949213.jpg" alt="표지" />
+          </div>
+          <div class="body">
+            <span class="badge badge-understand">AI 이해하기</span>
+            <h2 class="title">AI는 세상을 어떻게 바꾸는가</h2>
+            <p class="subtitle">장동선 지음</p>
+            <p class="desc">뇌과학자의 시선으로 본 인공지능과 우리의 일상 이야기.</p>
+          </div>
+        </article>
+
+        <article class="card" onclick="goLibrary('3년 후 AI 초격차 시대가 온다')">
+          <div class="cover-wrap">
+            <img class="cover" src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9788935212859.jpg" alt="표지" />
+          </div>
+          <div class="body">
+            <span class="badge badge-understand">AI 이해하기</span>
+            <h2 class="title">3년 후 AI 초격차 시대가 온다</h2>
+            <p class="subtitle">정두희 지음</p>
+            <p class="desc">가까운 미래, 우리가 어떤 준비를 해야 할지 명쾌하게 알려줍니다.</p>
+          </div>
+        </article>
+
+        <article class="card" onclick="goLibrary('AI 쇼크, 다가올 미래')">
+          <div class="cover-wrap">
+            <img class="cover" src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9788947548939.jpg" alt="표지" />
+          </div>
+          <div class="body">
+            <span class="badge badge-understand">AI 이해하기</span>
+            <h2 class="title">AI 쇼크, 다가올 미래</h2>
+            <p class="subtitle">모 가댓 지음</p>
+            <p class="desc">인공지능이 가져올 충격을 미리 대비하는 지혜로운 자세.</p>
+          </div>
+        </article>
+
+        <article class="card" onclick="goLibrary('AI 슈퍼파워')">
+          <div class="cover-wrap">
+            <img class="cover" src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791189318109.jpg" alt="표지" />
+          </div>
+          <div class="body">
+            <span class="badge badge-understand">AI 이해하기</span>
+            <h2 class="title">AI 슈퍼파워</h2>
+            <p class="subtitle">리카이푸 지음</p>
+            <p class="desc">글로벌 AI 트렌드를 통해 세상의 흐름을 읽는 안목을 기릅니다.</p>
+          </div>
+        </article>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
